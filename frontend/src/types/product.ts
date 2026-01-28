@@ -1,8 +1,12 @@
 export interface Product {
-    id: string;          // unique id for react key / db
-    name: string;
-    category: string;
-    price: number;
-    quantity: number;
-    value: number;       // price * quantity
-};
+  _id: string;
+  name: string;
+  category: string;
+  price: number;
+  quantity: number;
+  value: number;
+  enabled: boolean;
+  disabled?: boolean;
+  created_at?: string;
+  updated_at?: string;
+}

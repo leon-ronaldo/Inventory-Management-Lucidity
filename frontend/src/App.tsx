@@ -1,20 +1,34 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import './App.css'
-import AdminPage from './pages/AdminPage'
-import { Provider } from 'react-redux'
-import { store } from './store/store'
+import AdminInventory from './pages/AdminInventory';
+import UserInventory from './pages/UserInventory';
+import Navbar from './components/Navbar';
+import { useSelector } from 'react-redux';
+import { RootState } from './store/store';
+import { Toaster } from 'react-hot-toast';
+
 
 function App() {
+  const isAdmin = useSelector(
+    (state: RootState) => state.role.isAdmin
+  );
 
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<AdminPage />} />
-        </Routes>
-      </BrowserRouter>
-    </Provider>
-  )
+    <div className="min-h-screen bg-gray-950">
+      <Navbar />
+
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          style: {
+            background: "#111827",
+            color: "#fff",
+            border: "1px solid #1f2937"
+          }
+        }}
+      />
+
+      {isAdmin ? <AdminInventory /> : <UserInventory />}
+    </div>
+  );
 }
 
-export default App
+export default App;

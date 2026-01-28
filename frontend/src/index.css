@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,7 +14,13 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
 }
 
+@theme {
+    --color-background-color: #161718;
+    --color-primary-olive: #243325;
+    --color-text-green: #e9ff74;
+}

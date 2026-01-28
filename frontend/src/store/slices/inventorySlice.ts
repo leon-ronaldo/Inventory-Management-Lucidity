@@ -19,13 +19,13 @@ const inventorySlice = createSlice({
 
     removeProduct: (state, action: PayloadAction<string>) => {
       state.products = state.products.filter(
-        p => p.id !== action.payload
+        p => p._id !== action.payload
       );
     },
 
     updateProduct: (state, action: PayloadAction<Product>) => {
       const index = state.products.findIndex(
-        p => p.id === action.payload.id
+        p => p._id === action.payload._id
       );
 
       if (index !== -1) {
