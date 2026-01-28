@@ -1,4 +1,4 @@
-# 📦 Inventory Management Lucidity
+# 📦 Inventory Management - Lucidity
 
 A full-stack inventory management dashboard built with **React, Redux Toolkit, Express, and MongoDB**, designed to simulate a real-world admin panel with scalable architecture and modern UI.
 
